@@ -1,0 +1,60 @@
+entity Company {
+	manager String required,
+	name String required,
+	description String required,
+	email String required,
+	phoneNumber String required,
+	web String
+}
+
+entity Category {
+	code String required,
+	name String required,
+	description String required
+}
+
+entity Product {
+	companyId String required,
+	manager String required,
+	categoryId String required,
+	code String required,
+	name String required,
+	description String required,
+	price BigDecimal required,
+	active Boolean,
+	activationDate LocalDate,
+	deactivationDate LocalDate,
+	schema String required
+}
+
+entity Instance {
+	productId String required,
+	manager String required,
+	user String required,
+	status InstanceStatus required,
+	createDate LocalDate,
+	updateDate LocalDate,
+	data String required
+}
+
+entity Comment {
+	productId String required,
+	instanceId String required,
+	user String required,
+	createDate LocalDate,
+	data String required
+}
+
+entity Resolution {
+	productId String required,
+	instanceId String required,
+	manager String required,
+	data String required
+}
+
+enum InstanceStatus {
+    DRAFT, NEW, REJECTED, USER_PENDING, IN_PROGRESS, RESOLVED
+}
+
+paginate Company, Product, Instance, Comment, Resolution with infinite-scroll
+

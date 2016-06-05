@@ -1,0 +1,30 @@
+
+<div>
+    <h2><span translate="tg24HApp.resolution.detail.title">Resolution</span> {{vm.resolution.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="tg24HApp.resolution.productId">Product Id</span></dt>
+        <dd>
+            <span>{{vm.resolution.productId}}</span>
+        </dd>
+        <dt><span translate="tg24HApp.resolution.instanceId">Instance Id</span></dt>
+        <dd>
+            <span>{{vm.resolution.instanceId}}</span>
+        </dd>
+        <dt><span translate="tg24HApp.resolution.manager">Manager</span></dt>
+        <dd>
+            <span>{{vm.resolution.manager}}</span>
+        </dd>
+        <dt><span translate="tg24HApp.resolution.data">Data</span></dt>
+        <dd>
+            <span>{{vm.resolution.data}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

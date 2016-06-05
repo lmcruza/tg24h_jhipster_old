@@ -1,0 +1,32 @@
+{
+    "tg24HApp": {
+        "product" : {
+            "home": {
+                "title": "Products",
+                "createLabel": "Crear nuevo Product",
+                "createOrEditLabel": "Crear o editar Product",
+                "search": "Search for Product"
+            },
+            "created": "Un nuevo Product ha sido creado con el identificador {{ param }}",
+            "updated": "Un Product ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Product ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Product {{ id }}?"
+            },
+            "detail": {
+                "title": "Product"
+            },
+            "companyId": "Company Id",
+            "manager": "Manager",
+            "categoryId": "Category Id",
+            "code": "Code",
+            "name": "Name",
+            "description": "Description",
+            "price": "Price",
+            "active": "Active",
+            "activationDate": "Activation Date",
+            "deactivationDate": "Deactivation Date",
+            "schema": "Schema"
+        }
+    }
+}

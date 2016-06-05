@@ -1,0 +1,25 @@
+{
+    "tg24HApp": {
+        "resolution" : {
+            "home": {
+                "title": "Resolutions",
+                "createLabel": "Crear nuevo Resolution",
+                "createOrEditLabel": "Crear o editar Resolution",
+                "search": "Search for Resolution"
+            },
+            "created": "Un nuevo Resolution ha sido creado con el identificador {{ param }}",
+            "updated": "Un Resolution ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Resolution ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Resolution {{ id }}?"
+            },
+            "detail": {
+                "title": "Resolution"
+            },
+            "productId": "Product Id",
+            "instanceId": "Instance Id",
+            "manager": "Manager",
+            "data": "Data"
+        }
+    }
+}

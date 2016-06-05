@@ -1,0 +1,28 @@
+{
+    "tg24HApp": {
+        "instance" : {
+            "home": {
+                "title": "Instances",
+                "createLabel": "Create a new Instance",
+                "createOrEditLabel": "Create or edit a Instance",
+                "search": "Search for Instance"
+            },
+            "created": "A new Instance is created with identifier {{ param }}",
+            "updated": "A Instance is updated with identifier {{ param }}",
+            "deleted": "A Instance is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Instance {{ id }}?"
+            },
+            "detail": {
+                "title": "Instance"
+            },
+            "productId": "Product Id",
+            "manager": "Manager",
+            "user": "User",
+            "status": "Status",
+            "createDate": "Create Date",
+            "updateDate": "Update Date",
+            "data": "Data"
+        }
+    }
+}

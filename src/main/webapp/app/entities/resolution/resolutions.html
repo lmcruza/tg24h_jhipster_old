@@ -1,0 +1,62 @@
+<div>
+    <h2 translate="tg24HApp.resolution.home.title">Resolutions</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="resolution.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="tg24HApp.resolution.home.createLabel">
+                        Create new Resolution
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="productId"><span translate="tg24HApp.resolution.productId">Product Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="instanceId"><span translate="tg24HApp.resolution.instanceId">Instance Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="manager"><span translate="tg24HApp.resolution.manager">Manager</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="data"><span translate="tg24HApp.resolution.data">Data</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="resolution in vm.resolutions track by resolution.id">
+                    <td><a ui-sref="resolution-detail({id:resolution.id})">{{resolution.id}}</a></td>
+                    <td>{{resolution.productId}}</td>
+                    <td>{{resolution.instanceId}}</td>
+                    <td>{{resolution.manager}}</td>
+                    <td>{{resolution.data}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="resolution-detail({id:resolution.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="resolution.edit({id:resolution.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="resolution.delete({id:resolution.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

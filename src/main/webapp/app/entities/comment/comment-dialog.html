@@ -1,0 +1,84 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCommentLabel" translate="tg24HApp.comment.home.createOrEditLabel">Create or edit a Comment</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.comment.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.comment.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.comment.productId" for="field_productId">Product Id</label>
+            <input type="text" class="form-control" name="productId" id="field_productId"
+                    ng-model="vm.comment.productId"
+                    required />
+            <div ng-show="editForm.productId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.productId.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.comment.instanceId" for="field_instanceId">Instance Id</label>
+            <input type="text" class="form-control" name="instanceId" id="field_instanceId"
+                    ng-model="vm.comment.instanceId"
+                    required />
+            <div ng-show="editForm.instanceId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.instanceId.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.comment.user" for="field_user">User</label>
+            <input type="text" class="form-control" name="user" id="field_user"
+                    ng-model="vm.comment.user"
+                    required />
+            <div ng-show="editForm.user.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.user.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.comment.createDate" for="field_createDate">Create Date</label>
+                <div class="input-group">
+                    <input id="field_createDate" type="text" class="form-control" name="createDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.comment.createDate" is-open="vm.datePickerOpenStatus.createDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.comment.data" for="field_data">Data</label>
+            <input type="text" class="form-control" name="data" id="field_data"
+                    ng-model="vm.comment.data"
+                    required />
+            <div ng-show="editForm.data.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.data.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

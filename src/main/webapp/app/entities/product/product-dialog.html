@@ -1,0 +1,152 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProductLabel" translate="tg24HApp.product.home.createOrEditLabel">Create or edit a Product</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.product.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.product.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.product.companyId" for="field_companyId">Company Id</label>
+            <input type="text" class="form-control" name="companyId" id="field_companyId"
+                    ng-model="vm.product.companyId"
+                    required />
+            <div ng-show="editForm.companyId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.companyId.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.product.manager" for="field_manager">Manager</label>
+            <input type="text" class="form-control" name="manager" id="field_manager"
+                    ng-model="vm.product.manager"
+                    required />
+            <div ng-show="editForm.manager.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.manager.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.product.categoryId" for="field_categoryId">Category Id</label>
+            <input type="text" class="form-control" name="categoryId" id="field_categoryId"
+                    ng-model="vm.product.categoryId"
+                    required />
+            <div ng-show="editForm.categoryId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.categoryId.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.product.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                    ng-model="vm.product.code"
+                    required />
+            <div ng-show="editForm.code.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.code.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.product.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.product.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.product.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.product.description"
+                    required />
+            <div ng-show="editForm.description.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.description.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.product.price" for="field_price">Price</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                    ng-model="vm.product.price"
+                    required />
+            <div ng-show="editForm.price.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.price.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.price.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.product.active" for="field_active">Active</label>
+            <input type="checkbox" class="form-control" name="active" id="field_active"
+                    ng-model="vm.product.active"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.product.activationDate" for="field_activationDate">Activation Date</label>
+                <div class="input-group">
+                    <input id="field_activationDate" type="text" class="form-control" name="activationDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.product.activationDate" is-open="vm.datePickerOpenStatus.activationDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('activationDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.product.deactivationDate" for="field_deactivationDate">Deactivation Date</label>
+                <div class="input-group">
+                    <input id="field_deactivationDate" type="text" class="form-control" name="deactivationDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.product.deactivationDate" is-open="vm.datePickerOpenStatus.deactivationDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('deactivationDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tg24HApp.product.schema" for="field_schema">Schema</label>
+            <input type="text" class="form-control" name="schema" id="field_schema"
+                    ng-model="vm.product.schema"
+                    required />
+            <div ng-show="editForm.schema.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.schema.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

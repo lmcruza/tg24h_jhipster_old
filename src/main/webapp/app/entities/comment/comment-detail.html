@@ -1,0 +1,34 @@
+
+<div>
+    <h2><span translate="tg24HApp.comment.detail.title">Comment</span> {{vm.comment.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="tg24HApp.comment.productId">Product Id</span></dt>
+        <dd>
+            <span>{{vm.comment.productId}}</span>
+        </dd>
+        <dt><span translate="tg24HApp.comment.instanceId">Instance Id</span></dt>
+        <dd>
+            <span>{{vm.comment.instanceId}}</span>
+        </dd>
+        <dt><span translate="tg24HApp.comment.user">User</span></dt>
+        <dd>
+            <span>{{vm.comment.user}}</span>
+        </dd>
+        <dt><span translate="tg24HApp.comment.createDate">Create Date</span></dt>
+        <dd>
+            <span>{{vm.comment.createDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="tg24HApp.comment.data">Data</span></dt>
+        <dd>
+            <span>{{vm.comment.data}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

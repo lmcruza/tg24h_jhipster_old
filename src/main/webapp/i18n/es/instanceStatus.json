@@ -1,0 +1,13 @@
+{
+    "tg24HApp": {
+        "InstanceStatus" : {
+            "null": "",
+            "DRAFT": "DRAFT",
+            "NEW": "NEW",
+            "REJECTED": "REJECTED",
+            "USER_PENDING": "USER_PENDING",
+            "IN_PROGRESS": "IN_PROGRESS",
+            "RESOLVED": "RESOLVED"
+        }
+    }
+}

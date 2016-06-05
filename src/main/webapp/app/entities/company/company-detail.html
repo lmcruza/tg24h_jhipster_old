@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="tg24HApp.company.detail.title">Company</span> {{vm.company.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="tg24HApp.company.name">Name</span></dt>
+        <dd>
+            <span>{{vm.company.name}}</span>
+        </dd>
+        <dt><span translate="tg24HApp.company.description">Description</span></dt>
+        <dd>
+            <span>{{vm.company.description}}</span>
+        </dd>
+        <dt><span translate="tg24HApp.company.email">Email</span></dt>
+        <dd>
+            <span>{{vm.company.email}}</span>
+        </dd>
+        <dt><span translate="tg24HApp.company.phoneNumber">Phone Number</span></dt>
+        <dd>
+            <span>{{vm.company.phoneNumber}}</span>
+        </dd>
+        <dt><span translate="tg24HApp.company.web">Web</span></dt>
+        <dd>
+            <span>{{vm.company.web}}</span>
+        </dd>
+        <dt><span translate="tg24HApp.company.manager">Manager</span></dt>
+        <dd>
+            <span>{{vm.company.manager}} ({{vm.manager.email}})</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
