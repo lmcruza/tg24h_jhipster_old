@@ -61,7 +61,7 @@
         </div>
         <div class="form-group">
             <label class="control-label" translate="tg24HApp.comment.data" for="field_data">Data</label>
-            <input type="text" class="form-control" name="data" id="field_data"
+            <textarea type="text" class="form-control" name="data" id="field_data" rows="4"
                     ng-model="vm.comment.data"
                     required />
             <div ng-show="editForm.data.$invalid">

@@ -27,7 +27,7 @@
         </div>
         <div class="form-group">
             <label class="control-label" translate="tg24HApp.company.description" for="field_description">Description</label>
-            <input type="text" class="form-control" name="description" id="field_description"
+            <textarea class="form-control" name="description" id="field_description" rows="4"
                     ng-model="vm.company.description"
                     required />
             <div ng-show="editForm.description.$invalid">
