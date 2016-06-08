@@ -46,6 +46,9 @@ public class CompanyResourceIntTest {
     private static final String UPDATED_NAME = "BBBBB";
     private static final String DEFAULT_DESCRIPTION = "AAAAA";
     private static final String UPDATED_DESCRIPTION = "BBBBB";
+
+    private static final Boolean DEFAULT_ACTIVE = false;
+    private static final Boolean UPDATED_ACTIVE = true;
     private static final String DEFAULT_EMAIL = "AAAAA";
     private static final String UPDATED_EMAIL = "BBBBB";
     private static final String DEFAULT_PHONE_NUMBER = "AAAAA";
@@ -83,6 +86,7 @@ public class CompanyResourceIntTest {
         company.setManager(DEFAULT_MANAGER);
         company.setName(DEFAULT_NAME);
         company.setDescription(DEFAULT_DESCRIPTION);
+        company.setActive(DEFAULT_ACTIVE);
         company.setEmail(DEFAULT_EMAIL);
         company.setPhoneNumber(DEFAULT_PHONE_NUMBER);
         company.setWeb(DEFAULT_WEB);
@@ -106,6 +110,7 @@ public class CompanyResourceIntTest {
         assertThat(testCompany.getManager()).isEqualTo(DEFAULT_MANAGER);
         assertThat(testCompany.getName()).isEqualTo(DEFAULT_NAME);
         assertThat(testCompany.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
+        assertThat(testCompany.isActive()).isEqualTo(DEFAULT_ACTIVE);
         assertThat(testCompany.getEmail()).isEqualTo(DEFAULT_EMAIL);
         assertThat(testCompany.getPhoneNumber()).isEqualTo(DEFAULT_PHONE_NUMBER);
         assertThat(testCompany.getWeb()).isEqualTo(DEFAULT_WEB);
@@ -209,6 +214,7 @@ public class CompanyResourceIntTest {
                 .andExpect(jsonPath("$.[*].manager").value(hasItem(DEFAULT_MANAGER.toString())))
                 .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
                 .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
+                .andExpect(jsonPath("$.[*].active").value(hasItem(DEFAULT_ACTIVE.booleanValue())))
                 .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())))
                 .andExpect(jsonPath("$.[*].phoneNumber").value(hasItem(DEFAULT_PHONE_NUMBER.toString())))
                 .andExpect(jsonPath("$.[*].web").value(hasItem(DEFAULT_WEB.toString())));
@@ -227,6 +233,7 @@ public class CompanyResourceIntTest {
             .andExpect(jsonPath("$.manager").value(DEFAULT_MANAGER.toString()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
+            .andExpect(jsonPath("$.active").value(DEFAULT_ACTIVE.booleanValue()))
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()))
             .andExpect(jsonPath("$.phoneNumber").value(DEFAULT_PHONE_NUMBER.toString()))
             .andExpect(jsonPath("$.web").value(DEFAULT_WEB.toString()));
@@ -251,6 +258,7 @@ public class CompanyResourceIntTest {
         updatedCompany.setManager(UPDATED_MANAGER);
         updatedCompany.setName(UPDATED_NAME);
         updatedCompany.setDescription(UPDATED_DESCRIPTION);
+        updatedCompany.setActive(UPDATED_ACTIVE);
         updatedCompany.setEmail(UPDATED_EMAIL);
         updatedCompany.setPhoneNumber(UPDATED_PHONE_NUMBER);
         updatedCompany.setWeb(UPDATED_WEB);
@@ -267,6 +275,7 @@ public class CompanyResourceIntTest {
         assertThat(testCompany.getManager()).isEqualTo(UPDATED_MANAGER);
         assertThat(testCompany.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testCompany.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
+        assertThat(testCompany.isActive()).isEqualTo(UPDATED_ACTIVE);
         assertThat(testCompany.getEmail()).isEqualTo(UPDATED_EMAIL);
         assertThat(testCompany.getPhoneNumber()).isEqualTo(UPDATED_PHONE_NUMBER);
         assertThat(testCompany.getWeb()).isEqualTo(UPDATED_WEB);

@@ -60,6 +60,15 @@ public class CompanyResource {
     @Timed
     public ResponseEntity<Company> createCompany(@Valid @RequestBody Company company) throws URISyntaxException {
         log.debug("REST request to save Company : {}", company);
+
+        // company name is unique
+        if (companyRepository.findOneByNameIgnoreCase(company.getName()).isPresent()) {
+            return ResponseEntity.badRequest()
+                .headers(HeaderUtil.createFailureAlert("company", "companyexists", "Name already in use"))
+                .body(null);
+        }
+        
+        
         if (company.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("company", "idexists", "A new company cannot already have an ID")).body(null);
         }

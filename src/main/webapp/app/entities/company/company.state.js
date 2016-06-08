@@ -74,6 +74,7 @@
                                 manager: null,
                                 name: null,
                                 description: null,
+                                active: null,
                                 email: null,
                                 phoneNumber: null,
                                 web: null,

@@ -2,6 +2,7 @@ entity Company {
 	manager String required,
 	name String required,
 	description String required,
+	active Boolean,
 	email String required,
 	phoneNumber String required,
 	web String

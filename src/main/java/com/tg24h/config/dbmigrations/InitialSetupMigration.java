@@ -130,7 +130,8 @@ public class InitialSetupMigration {
             .get()
         );
     }
-    @ChangeSet(author = "initiator", id = "03-addSocialUserConnection", order = "03")
+    
+    @ChangeSet(order = "03", author = "initiator", id = "03-addSocialUserConnection")
     public void addSocialUserConnection(DB db) {
         DBCollection socialUserConnectionCollection = db.getCollection("jhi_social_user_connection");
         socialUserConnectionCollection.createIndex(BasicDBObjectBuilder
@@ -139,5 +140,22 @@ public class InitialSetupMigration {
                 .add("provider_user_id", 1)
                 .get(),
             "user-prov-provusr-idx", true);
+    }
+    
+    @ChangeSet(order = "04", author = "initiator", id = "04-addCompanies")
+    public void addCompanies(DB db) {
+        DBCollection compmaniesCollection = db.getCollection("company");
+        compmaniesCollection.createIndex("name");
+        compmaniesCollection.insert(BasicDBObjectBuilder.start()
+            .add("_id", "company-1")
+            .add("manager", "supervisor")
+            .add("name", "TG24H")
+            .add("description", "TG24H company description")
+            .add("active", true)
+            .add("email", "tg24h@tg24h.com")
+            .add("phone_number", "91 123 45 67")
+            .add("web", "www.tg24h.com")
+            .get()
+        );
     }
 }

@@ -27,6 +27,11 @@
     },
     {
       "fieldId": 4,
+      "fieldName": "active",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 5,
       "fieldName": "email",
       "fieldType": "String",
       "fieldValidateRules": [
@@ -34,7 +39,7 @@
       ]
     },
     {
-      "fieldId": 5,
+      "fieldId": 6,
       "fieldName": "phoneNumber",
       "fieldType": "String",
       "fieldValidateRules": [
@@ -42,7 +47,7 @@
       ]
     },
     {
-      "fieldId": 6,
+      "fieldId": 7,
       "fieldName": "web",
       "fieldType": "String"
     }

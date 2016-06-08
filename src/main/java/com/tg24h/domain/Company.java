@@ -32,6 +32,9 @@ public class Company implements Serializable {
     @Field("description")
     private String description;
 
+    @Field("active")
+    private Boolean active;
+
     @NotNull
     @Field("email")
     private String email;
@@ -73,6 +76,14 @@ public class Company implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Boolean isActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
     public String getEmail() {
@@ -126,6 +137,7 @@ public class Company implements Serializable {
             ", manager='" + manager + "'" +
             ", name='" + name + "'" +
             ", description='" + description + "'" +
+            ", active='" + active + "'" +
             ", email='" + email + "'" +
             ", phoneNumber='" + phoneNumber + "'" +
             ", web='" + web + "'" +

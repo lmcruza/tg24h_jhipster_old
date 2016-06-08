@@ -17,12 +17,15 @@
                 "title": "Company"
             },
             "manager": "Manager",
-            "manager.select": "Please select a manager for this company",
             "name": "Name",
             "description": "Description",
+            "active": "Active",
             "email": "Email",
             "phoneNumber": "Phone Number",
-            "web": "Web"
+            "web": "Web",
+            "error": {
+                "companyexists": "<strong>Company name already registered!</strong> Please choose another one."
+            }
         }
     }
 }
