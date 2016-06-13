@@ -144,9 +144,9 @@ public class InitialSetupMigration {
     
     @ChangeSet(order = "04", author = "initiator", id = "04-addCompanies")
     public void addCompanies(DB db) {
-        DBCollection compmaniesCollection = db.getCollection("company");
-        compmaniesCollection.createIndex("name");
-        compmaniesCollection.insert(BasicDBObjectBuilder.start()
+        DBCollection companiesCollection = db.getCollection("company");
+        companiesCollection.createIndex("name");
+        companiesCollection.insert(BasicDBObjectBuilder.start()
             .add("_id", "company-1")
             .add("manager", "supervisor")
             .add("name", "TG24H")
@@ -157,5 +157,32 @@ public class InitialSetupMigration {
             .add("web", "www.tg24h.com")
             .get()
         );
+    }
+    
+    @ChangeSet(order = "05", author = "initiator", id = "05-addCategories")
+    public void addCategories(DB db) {
+        DBCollection categoriesCollection = db.getCollection("category");
+        categoriesCollection.createIndex("name");
+        categoriesCollection.insert(BasicDBObjectBuilder.start()
+                .add("_id", "category-1")
+                .add("code", "01")
+                .add("name", "particulares")
+                .add("description", "Categoría para particulares")
+                .get()
+            );
+        categoriesCollection.insert(BasicDBObjectBuilder.start()
+                .add("_id", "category-2")
+                .add("code", "02")
+                .add("name", "autónomos")
+                .add("description", "Categoría para autónomos")
+                .get()
+            );
+        categoriesCollection.insert(BasicDBObjectBuilder.start()
+                .add("_id", "category-3")
+                .add("code", "03")
+                .add("name", "empresas")
+                .add("description", "Categoría para empresas")
+                .get()
+            );
     }
 }
